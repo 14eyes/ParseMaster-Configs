@@ -8894,7 +8894,7 @@ class MoleMole.Config.TODO_HJELIAACEII {
 }
 class MoleMole.Config.ConfigCodexQuestDialogSingle {
 	MoleMole.Config.ConfigCodexQuestText text
-	MoleMole.Config.TODO_LJCCKICBGHB GFKIDCDLBIB
+	MoleMole.Config.TODO_LJCCKICBGHB soundType
 	vuint soundId
 	vuint nextItemId
 	vuint[] EGMPKDIOLLG
@@ -10113,7 +10113,7 @@ class MoleMole.Config.ConfigMainQuestScheme {
 	vuint[] preloadLuaList
 	vuint[] forcePreloadLuaList
 	map<vuint,vint[]> freeStyleDic
-	MoleMole.Config.ConfigDialogScheme[] HALBECNDJMP
+	MoleMole.Config.ConfigDialogScheme[] dialogList
 }
 class MoleMole.Config.ConfigQuestScheme {
 	vuint subId
@@ -10125,7 +10125,7 @@ class MoleMole.Config.ConfigQuestScheme {
 	vuint stepDescTextMapHash
 	vuint guideTipsTextMapHash
 	MoleMole.Config.QuestShowType showType
-	MoleMole.Config.BanGroupType JFBOMIFLMMH
+	MoleMole.Config.BanGroupType banType
 	MoleMole.Config.QuestContentEx[] finishCond
 	MoleMole.Config.QuestContentEx[] failCond
 	MoleMole.Config.QuestGuideEx guide
@@ -10137,8 +10137,8 @@ class MoleMole.Config.ConfigQuestScheme {
 	bool isRewind
 	MoleMole.Config.QuestExecEx[] finishExec
 	MoleMole.Config.QuestExecEx[] failExec
-	string DPBPJBFMAFM
-	string HNGPKNPMGAG
+	string versionBegin
+	string versionEnd
 }
 class MoleMole.Config.QuestGuideHint {
 	MoleMole.Config.QuestGuideHintType type
@@ -15242,7 +15242,7 @@ excel class MoleMole.Config.CreatureExcelConfig : MoleMole.Config.EntityExcelCon
 	float elementMastery
 	float physicalSubHurt
 	float physicalAddHurt
-	vuint NFABPIGOCEE
+	vuint prefabPathRagdollHash
 	vuint LAOCAEONEFO
 }
 nozig excel class MoleMole.Config.FightPropGrowConfig {
@@ -16658,17 +16658,17 @@ excel class MoleMole.Config.NpcExcelConfig : MoleMole.Config.EntityExcelConfig {
 	string templateEmotionPath
 	vuint animatorConfigPathHash
 	MoleMole.Config.NPCBodyType bodyType
-	MoleMole.Config.NPCSpecialType HGAKHIFOPGP
+	MoleMole.Config.NPCSpecialType specialType
 	vuint CIDIBNHBLDP
-	vuint AIGNBDLDFPI
+	vuint firstMetId
 	vuint[] ALMNHHFHDDI
-	vuint EDMFJGGJICH
-	bool OFPEEEOAOEG
-	bool BMKPBAICPMA
-	bool PNOAPLIEJNP
-	bool PIKGJJLGCKP
+	vuint uniqueBodyId
+	bool isActivityDailyNpc
+	bool useDynBone
+	bool skipInitClosetToGround
+	bool isRelease
 	vuint LAOCAEONEFO
-	MoleMole.Config.ElementType GNAJIFFGBNI
+	MoleMole.Config.ElementType elementType
 }
 excel class MoleMole.Config.NpcFirstMetExcelConfig {
 	vuint id
@@ -17050,7 +17050,7 @@ excel class MoleMole.Config.ReliquarySetExcelConfig {
 	vuint DisableFilter
 	vuint[] containsList
 	vuint bagSortValue
-	vuint[] OAAFEJFGHEG
+	vuint[] dungeonGroup
 	vuint[] textList
 }
 excel class MoleMole.Config.ReliquaryPowerupExcelConfig {
@@ -17603,7 +17603,7 @@ excel class MoleMole.Config.TrialAvatarExcelConfig {
 	vuint trialSkillDepotId
 	bool isDynamicLevel
 	vuint specified_costume_id
-	bool OPJHKMKJJDN
+	bool hideIcon
 }
 excel class MoleMole.Config.TutorialDetailExcelConfig {
 	vuint id
@@ -17733,12 +17733,12 @@ excel class MoleMole.Config.WidgetGeneralExcelConfig {
 	bool canUseInLimitRegion
 	bool canUseWhenFight
 	bool canUseInUnNormalMoveState
+	bool JGMMOFCOPFD
 	bool canUseInAvatarFocus
 	bool canUseInDungeon
+	bool NHOOOGFFBLN
 	bool canUseInTower
 	bool canUseInHomeworld
-	bool FNIFIGJCBPB
-	bool ICMPJMFNJGH
 	MoleMole.Config.VEHICLE_LIMIT_TYPE vehicleLimit
 	vuint[] forbiddenDungeonTypeList
 	vuint[] forbiddenDungeonPlayTypeList
@@ -17965,7 +17965,7 @@ excel class MoleMole.Config.DungeonChallengeConfig {
 	bool noSuccessHint
 	bool noFailHint
 	bool noPauseHint
-	bool LNEHMIBCACG
+	bool noPauseHint
 	MoleMole.Config.InterruptButtonType interruptButtonType
 	bool isTransBackWhenInterrupt
 	bool isSuccessWhenNotSettled
@@ -18623,7 +18623,7 @@ excel class MoleMole.Config.ActivityCharAmusementLevelExcelConfig {
 	string PKHCMDHLKOF
 	vuint levelNameTextMapHash
 	vuint levelDescTextMapHash
-	vuint EEGMDLLCMBI
+	vuint levelRuleTextMapHash
 }
 excel class MoleMole.Config.ActivityCharAmusementOverallExcelConfig {
 	vuint scheduleId
@@ -18669,9 +18669,9 @@ excel class MoleMole.Config.ActivityMuqadasPotionLevelExcelConfig {
 	vuint dungeonId
 	vuint galleryId
 	vuint[] trialAvatarIdList
-	vuint GBAIMCINMFK
-	vuint KFHIDPGJMLK
-	vuint DKIAMCNMJGC
+	vuint dungeonNameTextMapHash
+	vuint dungeonDescTextMapHash
+	vuint skillDescTextMapHash
 	string HEOLDCMJEPI
 	string DDFPNMIOEOK
 	vuint[] watcherList
@@ -18684,7 +18684,7 @@ excel class MoleMole.Config.ActivityMuqadasPotionMonsterExcelConfig {
 	MoleMole.Config.TODO_HFJNLBCADEC[] EJEPNEAHBNH
 }
 nozig excel class MoleMole.Config.TODO_HFJNLBCADEC {
-	float[] OJNCMCALBJK
+	float[] position
 }
 excel class MoleMole.Config.ActivityRockBoardExploreQuestExcelConfig {
 	vuint questStageId
@@ -18967,14 +18967,14 @@ excel class MoleMole.Config.EffigyChallengeV2ExcelConfig {
 	vuint[] BHINECPHGOP
 	vuint[] EGMEFDEDMFG
 	vuint[] OJHLPAJDLIB
-	vuint DPDCHMDBALO
-	vuint FLACJBAGDFN
+	vuint levelTitleTextMapHash
+	vuint levelDescTextMapHash
 	vuint HIBEOEMCHGG
 	vuint MLJEIGKJGEL
 }
 excel class MoleMole.Config.EffigyChallengeV2OverallExcelConfig {
 	vuint id
-	vuint KHCACKBBOCO
+	vuint schedule_id
 	vuint MHFDLJELMIA
 	string NHFAMCDLDAN
 }
@@ -18982,21 +18982,21 @@ excel class MoleMole.Config.EffigyChallengeV2SkillExcelConfig {
 	vuint id
 	string abilityName
 	vuint EHKLPEDDHJI
-	vuint PKFCOONNHIK
-	vuint DKIAMCNMJGC
+	vuint skillNameTextMapHash
+	vuint skillDescTextMapHash
 	float[] descParam
 }
 excel class MoleMole.Config.EffigyChallengeV2TagExcelConfig {
 	vuint id
-	vuint FMCFOICOJIM
+	vuint tagDescTextMapHash
 	float[][] CNNDCBKGPHF
 }
 excel class MoleMole.Config.FishProficientExcelConfig {
 	vuint id
-	MoleMole.Config.TODO_EBPMEIHOEJL[] FEIBCAGMOLJ
+	MoleMole.Config.TODO_EBPMEIHOEJL[] gear
 }
 nozig excel class MoleMole.Config.TODO_EBPMEIHOEJL {
-	vuint KFOIMMONCBH
+	vuint num
 	float MACNGKPPHNA
 	float PCALAEECGGH
 }
@@ -19008,7 +19008,7 @@ excel class MoleMole.Config.FungusBaseExcelConfig {
 	vuint JKKHCDCILCB
 	vuint IPPAHOIJOIK
 	vuint DLCGGPKMOFC
-	string GNDEFDHIBNH
+	string skillName
 	string[] KNIPFBJOJHO
 	string LFMOCKDCNAH
 	vuint OCFAOIBODEP
@@ -19031,19 +19031,19 @@ excel class MoleMole.Config.FungusBaseExcelConfig {
 	vuint NALFGONNKHC
 }
 excel class MoleMole.Config.FungusCampExcelConfig {
-	vuint AKPKPABFAOC
-	vuint KGHILGGMBBP
+	vuint campId
+	vuint campNameTextMapHash
 	vuint unlockDay
-	vuint PLAEMNAOGME
+	vuint groupLinkId
 	vuint questId
-	vuint ILKNDGPALIF
+	vuint taskId
 	vuint[] watcherIds
 	vuint OHAEFABEDNH
 }
 excel class MoleMole.Config.FungusCultivateExcelConfig {
 	vuint CPHHCIKBGKA
 	vuint KBDMPEJGGPK
-	vuint ILKNDGPALIF
+	vuint taskId
 	vuint NKJDFJMIDPP
 	vuint unlockDay
 	vuint[] LHNMNOFPMAK
@@ -19058,7 +19058,7 @@ excel class MoleMole.Config.FungusCultivateExcelConfig {
 }
 excel class MoleMole.Config.FungusExcelConfig {
 	vuint id
-	vuint AKPKPABFAOC
+	vuint campId
 	vuint FNDOIEAKANF
 	vuint DABBKOALHOJ
 	vuint GHCGFGJGGLK
@@ -19071,15 +19071,15 @@ excel class MoleMole.Config.FungusExcelConfig {
 	string NGEPPJFNAMM
 	string EFEGLNCGALJ
 	vuint JODCICBHLME
-	vuint[] GNDEFDHIBNH
-	vuint[] BIHIOOJEAKJ
-	vuint LMGCFOKILLP
+	vuint[] skillName
+	vuint[] skillDesc
+	vuint infoDescTextMapHash
 	vuint KCIKGBMIJEI
 	vuint NDAMKAJMEJH
 }
 excel class MoleMole.Config.FungusNameExcelConfig {
-	vuint GFPMKJINOBJ
-	vuint NKELPLBJABD
+	vuint nameId
+	vuint nameTextMapHash
 	vuint GAGADBMFDEJ
 }
 excel class MoleMole.Config.FungusPlotDungeonEnemyExcelConfig {
@@ -19108,7 +19108,7 @@ excel class MoleMole.Config.FungusPlotDungeonExcelConfig {
 	vuint FONIAHAFCAM
 }
 excel class MoleMole.Config.FungusTrainingDungeonEnemyAffixExcelConfig {
-	vuint CKODBPOCHBL
+	vuint affixId
 	vuint NDJLFFONBDM
 }
 excel class MoleMole.Config.FungusTrainingDungeonExcelConfig {
@@ -19128,7 +19128,7 @@ excel class MoleMole.Config.FungusTrainingDungeonExcelConfig {
 	float baseScore
 	float OLICKNPNIFP
 	float MJHHINIADHA
-	float DDAOODALLFL
+	float DieParam
 	float IBJLLAKAICJ
 	vuint[] watcherIds
 	vuint BADHACKNEDA
@@ -19139,7 +19139,7 @@ excel class MoleMole.Config.FungusTrainingDungeonExcelConfig {
 	vuint KJOJEBMCIEC
 }
 excel class MoleMole.Config.GachaRestrictConfig {
-	vuint LBEENOMINDC
+	vuint gachaType
 	vuint HJDGGNLJAIE
 	vuint FBIFJAPEAPA
 	vuint CEABHNGLIDB
@@ -19147,28 +19147,28 @@ excel class MoleMole.Config.GachaRestrictConfig {
 }
 excel class MoleMole.Config.GravenInnocenceBossDataExcelConfig {
 	vuint id
-	vuint AGBABKKIFJN
+	vuint bossTitleTextMapHash
 	vuint[] watcherList
 	vuint FLAFJAHGILG
 }
 excel class MoleMole.Config.GravenInnocenceCampLevelExcelConfig {
 	vuint id
-	vuint NACOHDGDNCE
-	vuint KHAMICKCLBN
+	vuint groupLinkID
+	vuint challengeIndex
 	vuint LIEEKOMCCKA
 }
 excel class MoleMole.Config.GravenInnocenceCampStageExcelConfig {
 	vuint id
 	vuint openDay
 	vuint[] levelIdList
-	vuint DDCLPMAGNNE
+	vuint titleTextMapHash
 }
 excel class MoleMole.Config.GravenInnocenceCarveOverallExcelConfig {
 	vuint id
 	vuint[] groupIdList
-	vuint[] HFHBHPBOBKL
+	vuint[] itemIdList
 	vuint[] HMDGJMEBMOB
-	vuint NKAHLPCBFOG
+	vuint instructionId
 }
 excel class MoleMole.Config.GravenInnocenceCarveStageExcelConfig {
 	vuint id
@@ -19195,11 +19195,11 @@ excel class MoleMole.Config.GravenInnocenceExcelConfig {
 }
 excel class MoleMole.Config.GravenInnocenceObjectDataExcelConfig {
 	vuint id
-	vuint MLLHLLGEBGL
+	vuint groupBundleID
 	vuint AEIFADGGEIL
 	vuint watcher
 	string picture
-	vuint JEKMGGAGNFE
+	vuint descTextMapHash
 	vuint HFPGBMABIFD
 }
 excel class MoleMole.Config.GravenInnocencePhotoStageExcelConfig {
@@ -19207,9 +19207,9 @@ excel class MoleMole.Config.GravenInnocencePhotoStageExcelConfig {
 	vuint openDay
 	string icon
 	vuint IOFMNADPIII
-	vuint JEKMGGAGNFE
+	vuint descTextMapHash
 	vuint NIAGGHBELPD
-	vuint LMGCFOKILLP
+	vuint infoDescTextMapHash
 	vuint[] BDEGDJDLKOL
 	vuint APFJOFKJIEA
 	vuint[] watcherList
@@ -19221,22 +19221,22 @@ excel class MoleMole.Config.GravenInnocenceRaceLevelExcelConfig {
 	vuint id
 	vuint openDay
 	vuint galleryId
-	vuint NACOHDGDNCE
+	vuint groupLinkID
 	vuint[] FGHIOKNDJNO
-	vuint[] PMBHICNNAKN
-	vuint KOBOAEFBBDA
-	vuint FLACJBAGDFN
+	vuint[] scoreList
+	vuint levelNameTextMapHash
+	vuint levelDescTextMapHash
 	vuint ANEADHJBEIG
 	float timeFactor
 	float goldFactor
 }
 excel class MoleMole.Config.HomeWorldBlueprintSlotExcelConfig {
-	vuint KLAEELNOOON
+	vuint slotId
 }
 excel class MoleMole.Config.HomeWorldWoodExcelConfig {
 	vuint GCJNLHMHPLN
 	vuint OFEGCHHAJIL
-	vuint[][] FADHJELLLOM
+	vuint[][] materialList
 }
 excel class MoleMole.Config.InferenceConclusionExcelConfig {
 	vuint LGJAIDHGHCM
@@ -19252,7 +19252,7 @@ excel class MoleMole.Config.InferenceFreestyleExcelConfig {
 	vint NDCFDEBFFIA
 }
 excel class MoleMole.Config.InferencePageExcelConfig {
-	vuint CMJKCIJDPHF
+	vuint pageId
 	vuint parentQuestId
 	vuint[] JHEBIHJBHHJ
 	vuint MGMAPCMHLOL
@@ -19280,14 +19280,14 @@ excel class MoleMole.Config.InstableSprayBuffExcelConfig {
 	vuint id
 	string abilityGroupName
 	string JLECLFKAJEC
-	vuint NJAIOILCKBB
+	vuint iconNameHash
 	vuint elementType
-	vuint AANGENIJHPI
+	vuint buffNameTextMapHash
 	vuint JLCANNADDFF
 	string[] AIJNEOMLNHJ
 }
 excel class MoleMole.Config.InstableSprayDifficultyExcelConfig {
-	vuint KEBDBGJCENA
+	vuint difficultyLevel
 	vuint KIHJPPAGDOA
 	float scoreRatio
 	vuint CELONOKAMKF
@@ -19295,7 +19295,7 @@ excel class MoleMole.Config.InstableSprayDifficultyExcelConfig {
 excel class MoleMole.Config.InstableSprayLevelExcelConfig {
 	vuint levelId
 	vuint galleryId
-	vuint[] CNEAOPPKGAH
+	vuint[] buffIdList
 	vuint[] OGFEHPJECEB
 	vuint[] MMMFIPIOGMB
 	string monsterPreview
@@ -19311,8 +19311,8 @@ excel class MoleMole.Config.InstableSprayOverallExcelConfig {
 excel class MoleMole.Config.InstableSprayStageExcelConfig {
 	vuint stageId
 	vuint openDay
-	vuint DCNBICNIMKN
-	vuint FDAIAHPKIJF
+	vuint stageTitleTextMapHash
+	vuint stageDescTextMapHash
 	vuint dungeonId
 	vuint[] levelIdList
 	vuint[] watcherList
@@ -19330,19 +19330,19 @@ nozig excel class MoleMole.Config.PolyMonsterDropConfig {
 	MoleMole.Config.ItemLimitType itemLimit
 }
 excel class MoleMole.Config.MusicRiddleConfig {
-	vuint GFGLKDPNINK
-	vuint JEKMGGAGNFE
+	vuint musicId
+	vuint descTextMapHash
 	vuint FMPGPGJEPFA
-	vuint[] LGFMACIDAMN
+	vuint[] playList
 	vuint pushTipsId
-	bool JOKNKOGEFIL
+	bool isHide
 	vuint FMJJNBNOHOP
 	vuint JKDJIBLKHFG
 }
 excel class MoleMole.Config.MusicRiddlePlayConfig {
 	vuint playId
 	vuint materialId
-	string PCAPIINPJCK
+	string audioEventName
 	float FFKMOIAOKJO
 	vint[] ILDOJCFMANL
 	vuint NILJABINJBC
@@ -19370,25 +19370,25 @@ excel class MoleMole.Config.QuestCatalogExcelConfig {
 	vuint id
 	vuint[] BPACKPJCBNA
 	vuint[] questId
-	vuint[] KJOFNMEKBPP
+	vuint[] questMarkID
 	vuint[] NIKNOJDCAPP
-	vuint DDCLPMAGNNE
+	vuint titleTextMapHash
 	string pic
 }
 excel class MoleMole.Config.QuestCatalogGuideExcelConfig {
 	vuint id
 	vuint questId
-	vuint KJOFNMEKBPP
-	vuint JEKMGGAGNFE
+	vuint questMarkID
+	vuint descTextMapHash
 }
 excel class MoleMole.Config.ReunionGuideExcelConfig {
 	vuint id
 	vuint ELEHIGABCON
-	vuint KCCHAICMFFE
+	vuint bannerDescTextMapHash
 	vuint ICKLEJBLGCJ
 	MoleMole.Config.ReunionJumpType AOMLPENEJMG
 	MoleMole.Config.ReunionGuideOpType MALJIAFKJBD
-	MoleMole.Config.TODO_NDEOBDDICPB[] HJGDHGMPDOL
+	MoleMole.Config.TODO_NDEOBDDICPB[] showCond
 }
 nozig excel class MoleMole.Config.TODO_NDEOBDDICPB {
 	MoleMole.Config.ReunionGuideOpenType type
@@ -19407,10 +19407,10 @@ excel class MoleMole.Config.SpriteTagExcelConfig {
 excel class MoleMole.Config.SubQuestCatalogExcelConfig {
 	vuint id
 	MoleMole.Config.LogicType CFLGAKLBHAG
-	MoleMole.Config.TODO_ALBEJCAPEFK[] HJGDHGMPDOL
+	MoleMole.Config.TODO_ALBEJCAPEFK[] showCond
 	MoleMole.Config.LogicType FMKDKECLJMA
 	MoleMole.Config.TODO_ALBEJCAPEFK[] EEHMKAGLAJO
-	vuint JEKMGGAGNFE
+	vuint descTextMapHash
 }
 nozig excel class MoleMole.Config.TODO_ALBEJCAPEFK {
 	MoleMole.Config.TODO_GHMFGNKKAHB type
@@ -19428,8 +19428,8 @@ excel class MoleMole.Config.TravelCatalogExcelConfig {
 	vuint LEOMDIMGMCN
 	vuint questId
 	vuint groupId
-	vuint DDCLPMAGNNE
-	vuint JEKMGGAGNFE
+	vuint titleTextMapHash
+	vuint descTextMapHash
 	string icon
 }
 excel class MoleMole.Config.TreasureSeelieExcelConfig {
@@ -19450,7 +19450,7 @@ excel class MoleMole.Config.TreasureSeelieRegionExcelConfig {
 excel class MoleMole.Config.TutorialCatalogExcelConfig {
 	vuint id
 	vuint pushTipsId
-	vuint DDCLPMAGNNE
+	vuint titleTextMapHash
 }
 excel class MoleMole.Config.VintageMarketAttrFactorExcelConfig {
 	vuint id
@@ -19470,7 +19470,7 @@ nozig excel class MoleMole.Config.TODO_MFABHACNLBB {
 	vuint[] cost
 }
 excel class MoleMole.Config.VintageMarketBargainExcelConfig {
-	vuint GAOANAANJEM
+	vuint bargainId
 	vuint questId
 	vuint LJAHGHKEIHG
 	vuint DIBDEKACMJM
@@ -19498,13 +19498,13 @@ excel class MoleMole.Config.VintageMarketDealExcelConfig {
 }
 nozig excel class MoleMole.Config.TODO_LFKKNLNLOKB {
 	vuint id
-	vuint PALCLICNJNH
-	vuint KFOIMMONCBH
+	vuint price
+	vuint num
 }
 excel class MoleMole.Config.VintageMarketEnvEventExcelConfig {
 	vuint id
 	vuint duration
-	MoleMole.Config.VintageMarketEffectExcelConfig[] HGJIIMFIBNK
+	MoleMole.Config.VintageMarketEffectExcelConfig[] effectList
 	vuint FCNMLOEFCOD
 }
 nozig excel class MoleMole.Config.VintageMarketEffectExcelConfig {
@@ -19516,12 +19516,12 @@ excel class MoleMole.Config.VintageMarketEventExcelConfig {
 	MoleMole.Config.VintageMarketEventTriggerType triggerType
 	string triggerParam
 	MoleMole.Config.VintageMarketEventType eventType
-	vuint KPINHBPFMAM
+	vuint eventId
 }
 excel class MoleMole.Config.VintageMarketHelpSkillExcelConfig {
 	vuint id
-	vuint LOADPGOHADD
-	MoleMole.Config.VintageMarketEffectExcelConfig OHAHKLGDDKE
+	vuint effectDescTextMapHash
+	MoleMole.Config.VintageMarketEffectExcelConfig effect
 }
 excel class MoleMole.Config.VintageMarketNpcEventExcelConfig {
 	vuint id
@@ -19549,17 +19549,17 @@ nozig excel class MoleMole.Config.TODO_MLOMFODDCFL {
 }
 excel class MoleMole.Config.VintageMarketSkillExcelConfig {
 	vuint id
-	MoleMole.Config.VintageMarketEffectExcelConfig[] HGJIIMFIBNK
-	vuint PKFCOONNHIK
-	vuint DKIAMCNMJGC
-	vuint NJAIOILCKBB
-	vuint BHJDAIKGDAO
+	MoleMole.Config.VintageMarketEffectExcelConfig[] effectList
+	vuint skillNameTextMapHash
+	vuint skillDescTextMapHash
+	vuint iconNameHash
+	vuint tabType
 	vuint sortOrder
 }
 excel class MoleMole.Config.VintageMarketStoreExcelConfig {
 	vuint LPKEKKGAGMH
 	vuint BHNPBBAFBEP
-	vuint FGAHPEIGBAD
+	vuint slotCount
 	vuint[] BBANNFIGCIE
 	MoleMole.Config.TODO_MDANHNBCAAH[] PFEBCKJFOIJ
 	vuint EIJHHPPDGDA
@@ -19569,16 +19569,16 @@ excel class MoleMole.Config.VintageMarketStoreExcelConfig {
 	vuint MAFJGLJEDMA
 }
 nozig excel class MoleMole.Config.TODO_MDANHNBCAAH {
-	vuint DEIFIBHDMLP
-	vuint JOGAMDMBKOD
+	vuint defaultValue
+	vuint maxValue
 }
 excel class MoleMole.Config.WindFieldShowChallengeExcelConfig {
 	vint MCGILEOAADC
-	vint ENFBBAJKCLJ
-	vint JOGAMDMBKOD
-	MoleMole.Config.ActivityWindFieldShowType AOEFICODMFH
+	vint timeLimit
+	vint maxValue
+	MoleMole.Config.ActivityWindFieldShowType showType
 	vuint[] PKKPDMNIAPF
-	vuint DDCLPMAGNNE
+	vuint titleTextMapHash
 	vuint IONMIFCIBPN
 	vuint NCODCDLGCFC
 }
@@ -19588,7 +19588,7 @@ excel class MoleMole.Config.WindFieldStageExcelConfig {
 	vuint dungeonId
 	vuint galleryId
 	vuint[] watcherList
-	vuint JEKMGGAGNFE
+	vuint descTextMapHash
 	vuint JPOPDCKBDLI
-	vuint DDCLPMAGNNE
+	vuint titleTextMapHash
 }
