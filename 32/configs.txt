@@ -17965,7 +17965,6 @@ excel class MoleMole.Config.DungeonChallengeConfig {
 	bool noSuccessHint
 	bool noFailHint
 	bool noPauseHint
-	bool noPauseHint
 	MoleMole.Config.InterruptButtonType interruptButtonType
 	bool isTransBackWhenInterrupt
 	bool isSuccessWhenNotSettled
