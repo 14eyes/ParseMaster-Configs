@@ -17202,6 +17202,31 @@ excel class MoleMole.Config.RoutineTypeExcelConfig {
 	vuint descTextMapHash
 	string icon
 }
+excel class MoleMole.Config.SceneExcelConfigx {
+	vuint id
+	MoleMole.Config.SceneType type
+	__HACK_ _HACK__2
+	bool ignoreNavMesh
+	__HACK_ _HACK__4
+	__HACK_ _HACK__5
+	string scriptData
+	string overrideDefaultProfile
+	string levelEntityConfig
+	__HACK_ _HACK__9
+	vuint[] specifiedAvatarList
+	vuint maxSpecifiedAvatarNum
+	__HACK_ _HACK__12
+	string comment
+	__HACK_ _HACK__14
+	__HACK_ _HACK__15
+	__HACK_ _HACK__16
+	__HACK_ _HACK__17
+	float[] ntah
+	__HACK_ _HACK__19
+	vuint[] dungeonEntryPoint
+	__HACK_ _HACK__21
+	__HACK_ _HACK__22
+}
 excel class MoleMole.Config.SceneExcelConfig {
 	vuint id
 	MoleMole.Config.SceneType type
@@ -17217,15 +17242,18 @@ excel class MoleMole.Config.SceneExcelConfig {
 	vuint maxSpecifiedAvatarNum
 	float sceneFixTime
 	string comment
-	MoleMole.Config.VisionLevelType x
+	MoleMole.Config.VisionLevelType visionLevel
 	vuint safePoint
 	MoleMole.Config.SceneMpType mpType
 	bool isAllowMapMarkPoint
-	vuint[] xx
+	float[] idk
 	bool isDeleteMapMarkPoint
 	vuint[] dungeonEntryPoint
 	vuint imageSceneId
-	vuint xxx
+	vuint dummy_1
+	vuint dummy_2
+	vuint dummy_3
+	vuint worldSceneId
 }
 excel class MoleMole.Config.TriggerExcelConfig {
 	vuint id
