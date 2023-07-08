@@ -20,6 +20,7 @@ class MoleMole.Config.ConfigAbility {
 	MoleMole.Config.ConfigAbilityAction[] onZoneEnter
 	MoleMole.Config.ConfigAbilityAction[] onZoneExit
 	bool isDynamicAbility
+	bool idk
 	map<string,MoleMole.Config.ConfigAbilityPropertyEntry> abilityDefinedProperties
 }
 class MoleMole.Config.ConfigAbilityModifier {
