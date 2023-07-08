@@ -4831,6 +4831,7 @@ class MoleMole.Config.ConfigBornType {
 	MoleMole.Config.ConfigBornDirectionType direction
 	bool alongGround
 	bool useRotation
+	__HACK_ _HACK__1
 }
 class MoleMole.Config.ConfigBornByTarget : MoleMole.Config.ConfigBornType {
 }
