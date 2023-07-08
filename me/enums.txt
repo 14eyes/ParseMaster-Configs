@@ -280,6 +280,10 @@ enum MoleMole.Config.HitLevel {
 	Light = 2
 	Heavy = 3
 	Air = 4
+	DiveShake = 11
+	DiveLight = 12
+	DiveHeavy = 13
+	DiveAir = 14
 }
 enum MoleMole.Config.RetreatType {
 	__signed = True

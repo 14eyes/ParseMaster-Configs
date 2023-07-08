@@ -518,6 +518,7 @@ class MoleMole.Config.ConfigAttackProperty {
 	bool ignoreLevelDiff
 	bool trueDamage
 	bool ignoreModifyDamage
+	MoleMole.Config.DynamicFloat dummy_1
 }
 class MoleMole.Config.ConfigHitPattern {
 	string onHitEffectName
@@ -4342,6 +4343,8 @@ class MoleMole.Config.ConfigBaseAttackPattern {
 	MoleMole.Config.EntityAttackFilter entityAttackFilter
 	float massiveAttackRatio
 	MoleMole.Config.ConfigBornType born
+	bool dummy_1
+	bool dummy_2
 }
 class MoleMole.Config.ConfigSimpleAttackPattern : MoleMole.Config.ConfigBaseAttackPattern {
 	bool useCustomShape
